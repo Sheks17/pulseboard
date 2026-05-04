@@ -10,7 +10,7 @@
 
 > A beautifully designed Reddit reader curated for tech and music communities. Built with React, Redux Toolkit, and the Reddit JSON API.
 
-**[Live Demo →](https://pulseboard.vercel.app)**
+**[Live Demo →](https://pulseboard-zeta-inky.vercel.app)**
 
 ---
 
