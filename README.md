@@ -180,7 +180,7 @@ vercel
 ## Author
 
 **Shekina Uchegbulem**
-[Portfolio](https://shekinauchegbulem.com) · [GitHub](https://github.com/your-username) · [LinkedIn](https://linkedin.com/in/your-profile)
+[Portfolio](https://shekinauchegbulem.com) · [GitHub](https://github.com/Sheks17) · [LinkedIn](https://linkedin.com/in/shekina-uchegbulem-72a685136)
 
 ---
 
