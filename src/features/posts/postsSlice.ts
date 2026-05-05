@@ -50,10 +50,12 @@ export const fetchPosts = createAsyncThunk(
     try {
       const state = getState() as { posts: PostsState };
       const sort = state.posts.sort;
-      const res = await fetch(
-        `/api/reddit/r/${subreddit}/${sort}.json?limit=25`,
-        { headers: { Accept: "application/json" } }
-      );
+      const res = await fetch(`/api/reddit/r/${subreddit}/${sort}.json?limit=25`, {
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'PulseBoard/1.0'
+        }
+      });
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
       const data = await res.json();
       return data.data.children.map((c: any) => c.data) as Post[];
