@@ -51,7 +51,7 @@ export const fetchPosts = createAsyncThunk(
       const state = getState() as { posts: PostsState };
       const sort = state.posts.sort;
       const res = await fetch(
-        `https://www.reddit.com/r/${subreddit}/${sort}.json?limit=25`,
+        `h/api/reddit/r/${subreddit}/${sort}.json?limit=25`,
         { headers: { Accept: "application/json" } }
       );
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
@@ -68,7 +68,7 @@ export const searchPosts = createAsyncThunk(
   async (query: string, { rejectWithValue }) => {
     try {
       const res = await fetch(
-        `https://www.reddit.com/search.json?q=${encodeURIComponent(query)}&limit=25`,
+        `/api/reddit/search.json?q=${encodeURIComponent(query)}&limit=25`,
         { headers: { Accept: "application/json" } }
       );
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
@@ -85,7 +85,7 @@ export const fetchComments = createAsyncThunk(
   async ({ subreddit, postId }: { subreddit: string; postId: string }, { rejectWithValue }) => {
     try {
       const res = await fetch(
-        `https://www.reddit.com/r/${subreddit}/comments/${postId}.json?limit=50`,
+        `/api/reddit/r/${subreddit}/comments/${postId}.json`,
         { headers: { Accept: "application/json" } }
       );
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
