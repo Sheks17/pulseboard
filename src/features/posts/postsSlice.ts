@@ -51,7 +51,7 @@ export const fetchPosts = createAsyncThunk(
       const state = getState() as { posts: PostsState };
       const sort = state.posts.sort;
       const res = await fetch(
-        `h/api/reddit/r/${subreddit}/${sort}.json?limit=25`,
+        `/api/reddit/r/${subreddit}/${sort}.json?limit=25`,
         { headers: { Accept: "application/json" } }
       );
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
